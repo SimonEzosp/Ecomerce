@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="productos">
+      <app-lista-producto  ></app-lista-producto>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-card class="formulario">
+      <ion-card-header>
+          <img [src]="img">
+        <ion-card-title>ISHOPPING</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="!inactivo; else contenidoElse">
+        <ion-card-subtitle>Datos basicos</ion-card-subtitle>
+        <ion-input [disabled]="inactivo" [(ngModel)]="usuario"  type="text" label="USUARIO" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="direccion"  type="text" label="DIRECCION" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="pais"  type="text" label="PAIS" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="ciudad"  type="text" label="CIUDAD" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="idioma"  type="text" label="IDIOMA" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="moneda"  type="text" label="MONEDA" labelPlacement="floating"></ion-input>
+        <ion-button (click)="inactivar(); imprimir()">Guardar</ion-button>
+      </ion-card-content>
+          <ng-template #contenidoElse>
+        <p>mostar formulario</p>
+        <ion-button (click)="inactivar()" >MOstar Formulario</ion-button>
+      </ng-template>
+      
+    </ion-card>
+
+  </ion-grid>
+
+  
+</ion-content>

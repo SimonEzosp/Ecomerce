@@ -1,0 +1,39 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.card{
+    margin: 5vh 20vh;
+    padding: 4vh;
+    background-color: #e4d4e8;
+}
+.headerCard{
+    margin:1vh 0vh;
+}
+.cardContent{
+    padding: 4vh;
+}
+.avatar{
+    margin: auto;
+    width: 30vh;
+    height: 30vh;
+}
+.informatinTitle{
+    text-align: center;
+    margin:2vh 0vh;
+}
+ion-card-title{
+    color: grey;
+}
+ion-card-subtitle{
+    font-size: 2vh;
+}
+ion-title{
+    text-align: center;
+}
+.ButtonUpdate{
+    size: small;
+    display: flex;
+    justify-content: center;
+}
