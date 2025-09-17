@@ -1,12 +1,27 @@
-.card{
-    padding: 1vh;
-    
+*{
+    margin: 0;
+    padding: 0;
 }
-.cardContent{
-    max-height: 400px;
-    overflow-y: auto;
+ion-card{
+    padding:2vh;
+    background: #22002d;
 }
-p{
-    color: #ed96ff;
+ion-card-header{
+    margin: 0vh 2vh;
+    padding: 3vh;
 }
-
+ion-card-title{
+    text-align: center;
+    color:#ed96ff;
+    margin: 0vh 2vh;
+}
+ion-thumbnail{
+    margin: 0.5vh 0.5vh;
+}
+ion-item{
+    padding: 0.1vh;
+    --background: #ed96ff;
+}
+ion-content{
+    background: #ed96ff;
+}

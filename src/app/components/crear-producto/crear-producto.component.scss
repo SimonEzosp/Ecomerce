@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ion-label{
+    text-align: center;
+    font-size: 2vh;
+    margin: 0 5vh;
+    color:#ed96ff; 
+}
+ion-card-title{
+    text-align: center;
+    color:#ed96ff;  
+}
+ion-card{
+    margin: 5vh 40vh;
+    padding: 2vh;
+    justify-items: center;
+    border-radius: 2vh;
+}
+
+ion-input{
+    width: 60vh;
+    text-align: center;
+}
+ion-textarea{
+    width: 60vh;
+    height: 20vh;
+    text-align: center;
+}
+ion-input:hover{
+    background:whitesmoke;
+    border-radius: 5vh;
+}
+ion-textarea:hover{
+    background:whitesmoke;
+    border-radius: 50vh;
+}
+ion-card:hover{
+    transform: traslateX(10vh);
+}

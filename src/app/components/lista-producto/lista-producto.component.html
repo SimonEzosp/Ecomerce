@@ -1,6 +1,6 @@
-  <div >
-  <ion-card class="card" *ngIf="!activo; else contenidoElse" >    
-  <ion-card-header class="headerCard">
+  <div *ngIf="!activo; else contenidoElse">
+  <ion-card>    
+  <ion-card-header >
     <ion-card-title>
       Productos
     </ion-card-title>
@@ -11,7 +11,6 @@
         <ion-thumbnail slot="start">
           <img alt="Silhouette of mountains" src={{objeto.image}} />
         </ion-thumbnail>
-        <ion-card-subtitle></ion-card-subtitle>
         <ion-label>ID:{{objeto.id}}</ion-label>
         <ion-label>Nombre: {{objeto.title}}</ion-label>
         <ion-label>Precio: {{objeto.price}}</ion-label>
@@ -22,9 +21,8 @@
   </ion-card-content>
 
   </ion-card>
-    <ng-template #contenidoElse>
-    <ion-button (click)="inactivar()" >Mostrar Productos</ion-button>
-    </ng-template>
   </div>
 
-
+<ng-template #contenidoElse>
+<ion-button (click)="inactivar()" >Mostrar Productos</ion-button>
+</ng-template>

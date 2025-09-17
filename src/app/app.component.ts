@@ -14,8 +14,10 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 })
 export class AppComponent {
   public appPages = [
-    { title: 'HOME', url: '',icon: 'trash'},
+    { title: 'Home', url: '',icon: 'trash'},
+    { title: 'Tienda', url: 'tienda',icon: 'trash'},
     { title: 'User', url: 'info-usuario',icon: 'trash'},
+    { title: 'Producto', url: 'producto',icon: 'trash'},
     
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

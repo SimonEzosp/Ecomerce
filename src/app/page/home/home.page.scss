@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
 }
-ion-card-title{
-    text-align: center;
-}
 ion-card-subtitle{
     font-size: 2vh;
     text-align: center;
@@ -19,7 +16,7 @@ img{
     margin: 5vh 10vh;
     padding: 4vh;
 }
-ion-title{
+ion-title,ion-card-title{
     text-align: center;
 }
 p{

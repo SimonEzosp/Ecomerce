@@ -1,27 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar,IonGrid,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonInput,IonButton,IonAvatar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ListaProductoComponent } from 'src/app/components/lista-producto/lista-producto.component';
+import { Producto } from 'src/app/data/interfaces/producto.model';
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-tienda',
+  templateUrl: './tienda.page.html',
+  styleUrls: ['./tienda.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,ListaProductoComponent,IonGrid,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonInput,IonButton,IonAvatar]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,ListaProductoComponent]
 })
-export class HomePage implements OnInit {
-  img: string="assets/logo/logo.png";
-  inactivo: boolean= false;
-  inactivoUno: boolean= false;
-  nombreApp: string="ISHOPPING";
-  usuario: string="";
-  direccion: string="";
-  pais: string="";
-  ciudad: string="";
-  idioma: string="";
-  moneda: string="";
-  producto=[
+export class TiendaPage implements OnInit {
+  productoEnviado=[
         {
       id: 1,
       title: "Arroz",
@@ -111,25 +103,10 @@ export class HomePage implements OnInit {
       category: "string",
       image: "https://imgs.search.brave.com/wTbC5tJJohGmmJT1qY7ZLQa27kXtFlWZDDwn36HaTF4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzY0LzUyLzg3/LzM2MF9GXzY0NTI4/NzQ2X1hMNjF2N2o4/M01VN1BFQ3FHRHJO/OGpkTDNqYzAyc2VR/LmpwZw"     
     }
-  ]
+  ];
   constructor() { }
 
   ngOnInit() {
   }
-  inactivar(){
-    this.inactivo = !this.inactivo;
-  }
-  inactivarUno(){
-    this.inactivo = !this.inactivo;
-  }
-  imprimir(){
-    console.log({
-      Usuario:    this.usuario,
-      Direccion:  this.direccion,
-      Pais:       this.pais,
-      Ciudad:     this.ciudad,
-      Idioma:     this.idioma,
-      Moneda:     this.moneda,
-    });
-  }
+
 }
