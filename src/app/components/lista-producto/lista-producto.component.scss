@@ -2,26 +2,28 @@
     margin: 0;
     padding: 0;
 }
-ion-card{
-    padding:2vh;
-    background: #22002d;
-}
-ion-card-header{
-    margin: 0vh 2vh;
-    padding: 3vh;
-}
-ion-card-title{
+p{ 
     text-align: center;
-    color:#ed96ff;
-    margin: 0vh 2vh;
+    margin: 1vh 0vh;
+    color: white;
 }
-ion-thumbnail{
-    margin: 0.5vh 0.5vh;
+.containerCards{
+    padding:2vh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: start;
+    gap:2vh; 
+    border:1px solid #ed96ff;  
 }
-ion-item{
-    padding: 0.1vh;
-    --background: #ed96ff;
+.card{
+    padding:5vh;
+    max-width: 40vh;
+    max-height: 80vh;
+    border:1px solid #ed96ff;
+    border-radius: 1vh;
+    
 }
-ion-content{
-    background: #ed96ff;
+.card:hover{
+    transform: translateY(-0.9vh);
+    opacity: 0.4;
 }

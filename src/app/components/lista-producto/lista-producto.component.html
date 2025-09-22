@@ -1,28 +1,18 @@
-  <div *ngIf="!activo; else contenidoElse">
-  <ion-card>    
-  <ion-card-header >
-    <ion-card-title>
-      Productos
-    </ion-card-title>
-  </ion-card-header>
-  <ion-card-content >
-    <ion-list>
-      <ion-item *ngFor ="let objeto of listaObjeto">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src={{objeto.image}} />
-        </ion-thumbnail>
-        <ion-label>ID:{{objeto.id}}</ion-label>
-        <ion-label>Nombre: {{objeto.title}}</ion-label>
-        <ion-label>Precio: {{objeto.price}}</ion-label>
-        <ion-label>Descripcion: {{objeto.description}}</ion-label>
-        <ion-label>Categoria: {{objeto.category}}</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-
-  </ion-card>
+  <div *ngIf="!activo; else contenidoElse" class="containerCards">
+  <div class="card" *ngFor ="let objeto of listaObjeto">
+    <div>
+      <img src="assets/logo.png" alt="">
+    </div>
+    
+    <p>ID:<br>{{objeto.id}}</p>
+    <p>Nombre: <br> {{objeto.title}}</p>
+    <p>Precio: <br>{{objeto.price}}</p>
+    <p>Categoria: <br>{{objeto.category}}</p>
+    <p>Descripcion:Categoria <br>{{objeto.description}}</p>  
+  </div>
   </div>
 
 <ng-template #contenidoElse>
 <ion-button (click)="inactivar()" >Mostrar Productos</ion-button>
 </ng-template>
+
