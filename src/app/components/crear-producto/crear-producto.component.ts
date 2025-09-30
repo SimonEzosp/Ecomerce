@@ -21,8 +21,9 @@ export class CrearProductoComponent  implements OnInit {
     category: string;
     image:string;
 
-  constructor() { }
+  constructor() { } 
   ngOnInit() {}
+
   enviarProducto(){
       const productos={
       id: this.id,
