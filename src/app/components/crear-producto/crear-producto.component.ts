@@ -25,7 +25,7 @@ export class CrearProductoComponent  implements OnInit {
   ngOnInit() {}
 
   enviarProducto(){
-      const productos={
+      const productos:Producto={
       id: this.id,
       title: this.title,
       price: this.price,

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ListaProductoComponent } from 'src/app/components/lista-producto/lista-producto.component';
 import { Producto } from 'src/app/data/interfaces/producto.model';
+import { ServicioProducto } from 'src/app/data/services/servicio-producto';
 
 @Component({
   selector: 'app-tienda',
@@ -13,7 +14,8 @@ import { Producto } from 'src/app/data/interfaces/producto.model';
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,ListaProductoComponent]
 })
 export class TiendaPage implements OnInit {
-  productoEnviado=[
+  productService = inject(ServicioProducto)
+  productoEnviado:Producto[]=[
         {
       id: 1,
       title: "Arroz",
@@ -107,6 +109,9 @@ export class TiendaPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+    for (let producto of this.productService.productos) {
+      this.productoEnviado.push(producto);
+    }
 
+  }
 }
