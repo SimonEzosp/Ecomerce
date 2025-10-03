@@ -18,6 +18,7 @@ export class AppComponent {
     { title: 'Tienda', url: 'tienda',icon: 'trash'},
     { title: 'User', url: 'info-usuario',icon: 'trash'},
     { title: 'Producto', url: 'producto',icon: 'trash'},
+     { title: 'Carrito', url: 'carrito',icon: 'trash'}
     
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

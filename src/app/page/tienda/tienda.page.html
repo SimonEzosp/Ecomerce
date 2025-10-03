@@ -11,6 +11,10 @@
     </ion-toolbar>
   </ion-header>
   <div>
-    <app-lista-producto [listaObjeto]="productoEnviado" ></app-lista-producto>
+    <app-lista-producto 
+    [listaObjeto]="productoEnviado"
+    [modo]="'tienda'"
+    (productoAccion)="agregarAlCarrito($event)"  
+    ></app-lista-producto>
   </div>
 </ion-content>

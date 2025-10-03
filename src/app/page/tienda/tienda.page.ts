@@ -112,6 +112,10 @@ export class TiendaPage implements OnInit {
     for (let producto of this.productService.productos) {
       this.productoEnviado.push(producto);
     }
+  }
 
+  agregarAlCarrito(producto: Producto) {
+    this.productService.agregarAlCarrito(producto);
+    alert(`${producto.title} agregado al carrito`);
   }
 }

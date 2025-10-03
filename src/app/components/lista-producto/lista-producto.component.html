@@ -13,7 +13,7 @@
     <p class="card-price">COP {{objeto.price}}</p>
 
     <!-- Botón -->
-    <button class="btn-add">Agregar al carrito</button>
+    <button class="btn-add"  (click)="ejecutarAccion(objeto)">{{ modo === 'tienda' ? 'Agregar al carrito' : 'Eliminar del carrito' }}</button>
     
   </div>
 </div>

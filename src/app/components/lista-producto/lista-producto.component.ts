@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {IonButton,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar} from '@ionic/angular/standalone';
 import { Producto } from 'src/app/data/interfaces/producto.model';
@@ -18,13 +18,18 @@ export class ListaProductoComponent  implements OnInit {
   idioma: string="";
   moneda: string="";
 
-  @Input() listaObjeto:Producto[] =[
-  ]
+  @Input() listaObjeto:Producto[] =[]
+  @Input() modo: 'tienda' | 'carrito' = 'tienda'
+  @Output() productoAccion = new EventEmitter<Producto>(); // 👈 evento para avisar al padre
+
+
   constructor() { }
 
   ngOnInit() {}
   inactivar(){
     this.activo = !this.activo;
   }
-
+  ejecutarAccion(producto: Producto) {
+    this.productoAccion.emit(producto);
+  }
 }
