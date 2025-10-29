@@ -6,6 +6,7 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content >
+    <!--
     <ion-label>Imagen</ion-label>
     <ion-input  [(ngModel)]="image" type="file" ></ion-input>
     <ion-label>ID</ion-label>
@@ -18,7 +19,16 @@
     <ion-input  [(ngModel)]="category" type="text"></ion-input>
     <ion-label>DESCRIPCION </ion-label>
     <ion-textarea  [(ngModel)]="description" type="text" maxlength="200"></ion-textarea>    
-    <ion-button (click)="enviarProducto()">Guardar</ion-button>
+    <ion-button (click)="enviarProducto()">Guardar</ion-button>-->
+    <form [formGroup]="formRactive" (ngSubmit)="guardarFormulario()">
+      <ion-input formControlName="id" type="number">ID</ion-input>
+      <ion-input formControlName="title" type="text">TITLE</ion-input>
+      <ion-input formControlName="price" type="number">PRICE</ion-input>
+      <ion-input formControlName="description" type="text">DESCRIPTION</ion-input>
+      <ion-input formControlName="category" type="text">CATEGORY</ion-input>
+      <ion-input formControlName="image" type="file">IMAGE</ion-input>
+      <ion-button type="submit">Guardar</ion-button>
+    </form>
   </ion-card-content>
   </ion-card>
 </div>
