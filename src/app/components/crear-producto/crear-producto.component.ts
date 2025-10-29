@@ -2,14 +2,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {IonButton,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar,IonInput, IonTextarea} from '@ionic/angular/standalone';
 import { Producto } from 'src/app/data/interfaces/producto.model';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { empty } from 'rxjs';
 @Component({
   selector: 'app-crear-producto',
   templateUrl: './crear-producto.component.html',
   styleUrls: ['./crear-producto.component.scss'],
   standalone:true,
-  imports:[FormsModule,IonButton,CommonModule,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar,IonInput, IonTextarea]
+  imports:[ReactiveFormsModule,FormsModule,IonButton,CommonModule,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar,IonInput, IonTextarea]
 })
 export class CrearProductoComponent  implements OnInit {
   @Output() producto = new EventEmitter<Producto>();
@@ -39,9 +39,11 @@ export class CrearProductoComponent  implements OnInit {
 
   guardarFormulario(){
     if(this.formReactive.valid){
-      const productoEmitir: Producto = this.formReactive.value;
+      const  {image,id,title,price,description,category} = this.formReactive.value;
+      const productoEmitir: Producto = {id: id,title,price,description,category,image}
       this.producto.emit(productoEmitir)
       alert("formulario enviado")
+      this.formReactive.reset();
     }else{
       alert("formulario no enviado")
     }
