@@ -34,7 +34,6 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
 ion-button{
     --background:#ed96ff;
 }
@@ -45,9 +44,23 @@ ion-title{
     text-align: center;
     color:#ed96ff;
 }
-ion-content{
-    --background:#22002d;
+ion-content {
+  --background: radial-gradient(circle at center, #6b227d 0%, #22002d 80%);
 }
+
+
 button{
     background-color:#ed96ff ;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+ion-title.titulo {
+  font-family: 'Rubik Dirt', system-ui !important;
+  letter-spacing: 1px;
+  font-size: 4vh;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
 }

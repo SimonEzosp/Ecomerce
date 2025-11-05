@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>producto</ion-title>
+    <ion-title class="titulo">PRODUCTO</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,6 +14,6 @@
     <app-crear-producto (producto)="recibirMensaje($event)"></app-crear-producto>
   </div>
   <div>
-     <app-lista-producto [listaObjeto]="productos" ></app-lista-producto>
+     <app-lista-producto modo='crear' [listaObjeto]="productos" ></app-lista-producto>
   </div>
 </ion-content>

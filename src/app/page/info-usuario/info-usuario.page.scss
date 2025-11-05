@@ -2,30 +2,43 @@
 *{
     margin: 0;
     padding: 0;
+    color: white;
 }
 .card{
-    margin: 5vh 20vh;
-    padding: 4vh;
-    background-color: #e4d4e8;
+    margin: 2vh auto;
+    width: 500px;
+    padding: 1vh;
+    justify-items: center;
+    border-radius: 25px;
+    background:#6b227d;
 }
 .headerCard{
     margin:1vh 0vh;
 }
 .cardContent{
-    padding: 4vh;
+    padding: 1vh;
+    margin: 1vh 0vh;
 }
 .avatar{
     margin: auto;
-    width: 30vh;
-    height: 30vh;
+    width: 20vh;
+    height: 20vh;
 }
 .informatinTitle{
     text-align: center;
-    margin:2vh 0vh;
 }
 
 ion-card-subtitle{
     font-size: 2vh;
+    padding:1vh;
+    color: black;
+    background-color: lightgrey;
+    border-radius: 50px;
+}
+
+ion-card-title{
+    text-align: center;
+    margin: 1vh 0vh
 }
 .ButtonUpdate{
     size: small;

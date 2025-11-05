@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, NgModule, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {IonButton,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar} from '@ionic/angular/standalone';
 import { Producto } from 'src/app/data/interfaces/producto.model';
@@ -20,19 +20,20 @@ export class ListaProductoComponent  implements OnInit {
   moneda: string="";
   serviceProduct = inject(ServicioProducto)
   @Input() listaObjeto:Producto[] =[]
-  @Input() modo: 'tienda' | 'carrito' = 'tienda'
-  @Output() productoAccion = new EventEmitter<Producto>(); // 👈 evento para avisar al padre
+  @Input() modo: 'crear'|'tienda' | 'carrito' = 'tienda'
+  @Output() productoAccion = new EventEmitter<Producto>();
   @Output() productosCargados = new EventEmitter<Producto[]>();
 
   constructor() { }
 
   ngOnInit() {
-    if (this.modo === 'tienda') {
-      this.taerGet();
-    } else if (this.modo === 'carrito') {
-      this.listaObjeto = this.serviceProduct.obtenerCarrito();
-    }
-    
+  if (this.modo === 'tienda') {
+    this.taerGet();
+  } else if (this.modo === 'carrito') {
+    this.listaObjeto = this.serviceProduct.obtenerCarrito();
+  } else if (this.modo === 'crear') {
+    this.listaObjeto = this.serviceProduct.obtenerProductos();
+  }
   }
   inactivar(){
     this.activo = !this.activo;
@@ -40,7 +41,6 @@ export class ListaProductoComponent  implements OnInit {
   ejecutarAccion(producto: Producto) {
     this.productoAccion.emit(producto);
   }
-
   taerGet(){
     this.serviceProduct.getAPI().subscribe({
       next:(data:Producto[])=>{
@@ -53,7 +53,5 @@ export class ListaProductoComponent  implements OnInit {
       }
     })
   }
-  recibirProductoNuevo(producto: Producto) {
-    this.serviceProduct.recibirProducto(producto); // lo agrega a la lista visible
-  }
+
 }

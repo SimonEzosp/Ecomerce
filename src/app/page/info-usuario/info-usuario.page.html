@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>USER INFORMATION</ion-title>
+    <ion-title class="titulo">USER INFORMATION</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,26 +15,23 @@
     </ion-card-header>
 
     <ion-card-content class="cardContent">
-      <ion-card-title>NAME</ion-card-title>
+      <ion-card-title>First Name</ion-card-title>
         <ion-card-subtitle>{{name}}</ion-card-subtitle>
-      <ion-card-title>SECOND NAME</ion-card-title>
+      <ion-card-title>Middle Name</ion-card-title>
         <ion-card-subtitle>{{sName}}</ion-card-subtitle>
-      <ion-card-title>FIRST LAST NAME</ion-card-title>
+      <ion-card-title>First Surname</ion-card-title>
         <ion-card-subtitle>{{fLName}}</ion-card-subtitle>
-      <ion-card-title>SECOND LAST NAME</ion-card-title>
+      <ion-card-title>Second Surname</ion-card-title>
         <ion-card-subtitle>{{sLName}}</ion-card-subtitle>
-      <ion-card-title>BIRTH DATE</ion-card-title>
+      <ion-card-title>Birth Date</ion-card-title>
         <ion-card-subtitle>{{birthDate | date:'longDate'}}</ion-card-subtitle>
       <ion-card-title>Mail</ion-card-title>
         <ion-card-subtitle>{{mail}}</ion-card-subtitle>
-      <ion-card-title>PHONE</ion-card-title>
+      <ion-card-title>Phone</ion-card-title>
         <ion-card-subtitle>{{phone}}</ion-card-subtitle>
-      <ion-card-title>LINKS</ion-card-title>
+      <ion-card-title>Links</ion-card-title>
           <ion-card-subtitle><a [href]="linkedin" target="_blank">linkedin</a></ion-card-subtitle>
     </ion-card-content>
       <ion-button size="small" class="ButtonUpdate">UPDATE</ion-button>
-
   </ion-card>
-
-  
 </ion-content>

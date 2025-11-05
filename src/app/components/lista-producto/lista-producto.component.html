@@ -1,23 +1,11 @@
-<div *ngIf="!activo; else contenidoElse" class="containerCards">
-  <div class="card" *ngFor="let objeto of listaObjeto">
-    
-    <!-- Imagen -->
-    <div class="card-img">
+
+<ion-card  class="containerCards">
+  <ion-card class="card" *ngFor="let objeto of listaObjeto">
+    <ion-card class="card-img">
       <img [src]="objeto.image" alt="{{objeto.title}}">
-    </div>
-
-    <!-- Nombre del producto -->
-    <h3 class="card-title">{{objeto.title}}</h3>
-
-    <!-- Precio -->
-    <p class="card-price">COP {{objeto.price}}</p>
-
-    <!-- Botón -->
-    <button class="btn-add"  (click)="ejecutarAccion(objeto)">{{ modo === 'tienda' ? 'Agregar al carrito' : 'Eliminar del carrito' }}</button>
-    
-  </div>
-</div>
-
-<ng-template #contenidoElse>
-  <ion-button (click)="inactivar()">Mostrar Productos</ion-button>
-</ng-template>
+    </ion-card>
+    <ion-card-title class="card-title">{{objeto.title}}</ion-card-title>
+    <ion-card-subtitle class="card-price">COP {{objeto.price}}</ion-card-subtitle>
+    <ion-button class="btn-add"  (click)="ejecutarAccion(objeto)">{{ modo === 'tienda' || modo == 'crear' ? 'Agregar al carrito' : 'Eliminar del carrito' }}</ion-button>
+  </ion-card>
+<ion-card>

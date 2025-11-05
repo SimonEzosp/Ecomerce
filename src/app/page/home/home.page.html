@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>HOME</ion-title>
+    <ion-title class="titulo">HOME</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid class="productos">
-      <app-lista-producto [listaObjeto]="producto" ></app-lista-producto>
+      <app-lista-producto [modo]="'tienda'" (productoAccion)="agregarAlCarrito($event)"  ></app-lista-producto>
   </ion-grid>
 
   <ion-grid >

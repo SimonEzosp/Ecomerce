@@ -14,20 +14,29 @@ import { ServicioProducto } from 'src/app/data/services/servicio-producto';
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,CrearProductoComponent,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar,ListaProductoComponent]
 })
 export class ProductoPage implements OnInit {
-  productos:Producto[]=[];//guarda productos en un arreglo
+  productos:Producto[]=[];
   prdocutService = inject(ServicioProducto)
   constructor() { }
 
   ngOnInit() {
   }
   recibirMensaje({id,title,price,description,category,image}:Producto){
-    //desestructuramos el objeto recibido tipo Producto para obtener sus propiedades
     const nuevoProducto: Producto={id,title,price,description,category,image};
-     //sse crea un nuevo objeto de tipo producto con los valores recibidos
     this.productos.push(nuevoProducto)
-    //añadimos el objeto al arreglo productos para acumular los que envia el hijo
+    
     console.log("mensaje enviado desde el hijo: ", this.productos);
     this.prdocutService.recibirProducto(nuevoProducto)
+
+
+    this.prdocutService.postAPI(nuevoProducto).subscribe({
+      next: (data:Producto[])=>{
+        console.log("producto creado ", data)
+        alert("producto creado, el padre envia al metodo del service")
+      },
+      error: (err)=>{
+        console.log("ERROR ",err)
+      }
+    })
   }
 
 }
