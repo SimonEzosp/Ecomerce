@@ -7,7 +7,7 @@ export const routes: Routes = [
       import('./folder/folder.page').then((m) => m.FolderPage),
   },
   {
-    path: 'info-usuario',
+    path: 'info-user',
     loadComponent: () => import('./page/info-usuario/info-usuario.page').then( m => m.InfoUsuarioPage)
   },
   {
@@ -15,15 +15,15 @@ export const routes: Routes = [
     loadComponent: () => import('./page/home/home.page').then( m => m.HomePage)
   },
   {
-    path: 'tienda',
+    path: 'shop',
     loadComponent: () => import('./page/tienda/tienda.page').then( m => m.TiendaPage)
   },
   {
-    path: 'producto',
+    path: 'product',
     loadComponent: () => import('./page/producto/producto.page').then( m => m.ProductoPage)
   },
   {
-    path: 'carrito',
+    path: 'car',
     loadComponent: () => import('./page/carrito/carrito.page').then( m => m.CarritoPage)
   },
 ];

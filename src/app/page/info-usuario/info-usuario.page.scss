@@ -2,15 +2,14 @@
 *{
     margin: 0;
     padding: 0;
-    color: white;
+    
 }
 .card{
-    margin: 2vh auto;
-    width: 500px;
+    margin: 2vh 1vh;
     padding: 1vh;
     justify-items: center;
     border-radius: 25px;
-    background:#6b227d;
+    background: linear-gradient(145deg,  #ed96ff,#6b227d);
 }
 .headerCard{
     margin:1vh 0vh;
@@ -38,7 +37,8 @@ ion-card-subtitle{
 
 ion-card-title{
     text-align: center;
-    margin: 1vh 0vh
+    margin: 1vh 0vh;
+    color: white;
 }
 .ButtonUpdate{
     size: small;

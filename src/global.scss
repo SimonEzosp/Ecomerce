@@ -36,6 +36,7 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 ion-button{
     --background:#ed96ff;
+    display: flex;
 }
 ion-toolbar{
     --background:#6b227d;

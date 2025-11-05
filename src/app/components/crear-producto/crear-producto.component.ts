@@ -42,10 +42,9 @@ export class CrearProductoComponent  implements OnInit {
       const  {image,id,title,price,description,category} = this.formReactive.value;
       const productoEmitir: Producto = {id: id,title,price,description,category,image}
       this.producto.emit(productoEmitir)
-      alert("Producto enviado al padre")
       this.formReactive.reset();
     }else{
-      alert("formulario no enviado")
+      alert("no enviado")
     }
   }
   /*

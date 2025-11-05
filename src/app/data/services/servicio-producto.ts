@@ -25,8 +25,9 @@ export class ServicioProducto {
     agregarAlCarrito(producto: Producto) {
        const productoExistente = this.carrito.find(p => p.id === producto.id);
       if(productoExistente ){
-        alert("ya ingresaste este producto")
+        alert("THE PRODUCT EXIST IN THE CART")
       }else{
+        alert(`ADDED TO CART: ${producto.title} `);
         this.carrito.push(producto);
       }
     
@@ -34,14 +35,14 @@ export class ServicioProducto {
   eliminarDelCarrito(producto: Producto) {
 
     this.carrito = this.carrito.filter(p => p.id !== producto.id);
-    alert("producto eliminado "+ producto.title )
+    alert("DROP "+ producto.title )
   }
   obtenerCarrito(): Producto[] {
     return this.carrito;
   }
 
   postAPI(post: Producto):Observable<Producto[]>{
-    alert("producto ingresado")
+    alert("PRODUCT INSERT")
   return this.http.post<Producto[]>(this.postURL,post)
 }
 

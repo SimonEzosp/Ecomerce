@@ -13,21 +13,20 @@
     <ion-card class="formulario">
       <ion-card-header>
           <img [src]="img">
-        <ion-card-title>{{nombreApp}}</ion-card-title>
       </ion-card-header>
       <ion-card-content *ngIf="!inactivo; else contenidoElse">
         <ion-card-subtitle>Datos basicos</ion-card-subtitle>
-        <ion-input [disabled]="inactivo" [(ngModel)]="usuario"  type="text" label="USUARIO" labelPlacement="floating"></ion-input>
-        <ion-input [disabled]="inactivo" [(ngModel)]="direccion"  type="text" label="DIRECCION" labelPlacement="floating"></ion-input>
-        <ion-input [disabled]="inactivo" [(ngModel)]="pais"  type="text" label="PAIS" labelPlacement="floating"></ion-input>
-        <ion-input [disabled]="inactivo" [(ngModel)]="ciudad"  type="text" label="CIUDAD" labelPlacement="floating"></ion-input>
-        <ion-input [disabled]="inactivo" [(ngModel)]="idioma"  type="text" label="IDIOMA" labelPlacement="floating"></ion-input>
-        <ion-input [disabled]="inactivo" [(ngModel)]="moneda"  type="text" label="MONEDA" labelPlacement="floating"></ion-input>
-        <ion-button (click)="inactivar(); imprimir()">Guardar</ion-button>
+        <ion-input [disabled]="inactivo" [(ngModel)]="usuario"  type="text" label="USER" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="direccion"  type="text" label="ADDRESS" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="pais"  type="text" label="COUNTRY" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="ciudad"  type="text" label="CITY" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="idioma"  type="text" label="LANGUAGE" labelPlacement="floating"></ion-input>
+        <ion-input [disabled]="inactivo" [(ngModel)]="moneda"  type="text" label="CURRENCY" labelPlacement="floating"></ion-input>
+        <ion-button (click)="inactivar(); imprimir()">SEND</ion-button>
       </ion-card-content>
           <ng-template #contenidoElse>
-        <p>mostar formulario</p>
-        <ion-button (click)="inactivar()" >MOstar Formulario</ion-button>
+        <p>Show Forms</p>
+        <ion-button (click)="inactivar()" >Show Forms</ion-button>
       </ng-template>
       
     </ion-card>

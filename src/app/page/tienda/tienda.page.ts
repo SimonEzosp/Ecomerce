@@ -23,6 +23,5 @@ export class TiendaPage implements OnInit {
 
   agregarAlCarrito(producto: Producto) {
     this.productService.agregarAlCarrito(producto);
-    alert(`${producto.title} agregado al carrito`);
   }
 }

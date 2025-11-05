@@ -13,7 +13,7 @@ ion-card-title{
     color:#ed96ff;  
 }
 ion-card{
-    margin: 5vh 40vh;
+    margin: 1vh 1vh;
     padding: 2vh;
     justify-items: center;
     border-radius: 2vh;
@@ -35,7 +35,4 @@ ion-input:hover{
 ion-textarea:hover{
     background:whitesmoke;
     border-radius: 50vh;
-}
-ion-card:hover{
-    transform: traslateX(10vh);
 }

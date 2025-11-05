@@ -31,7 +31,6 @@ export class ProductoPage implements OnInit {
     this.prdocutService.postAPI(nuevoProducto).subscribe({
       next: (data:Producto[])=>{
         console.log("producto creado ", data)
-        alert("producto creado, el padre envia al metodo del service")
       },
       error: (err)=>{
         console.log("ERROR ",err)
