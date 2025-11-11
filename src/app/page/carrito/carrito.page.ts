@@ -23,6 +23,6 @@ export class CarritoPage implements OnInit {
   }
   eliminarDelCarrito(producto: Producto) {
     this.servicio.eliminarDelCarrito(producto);
-    this.carrito = this.servicio.carrito; // refresca la lista
+    this.carrito = this.servicio.carrito; 
   }
 }

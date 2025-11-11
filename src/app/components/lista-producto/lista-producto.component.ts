@@ -1,13 +1,13 @@
 import { Component, EventEmitter, inject, Input, NgModule, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IonButton,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar} from '@ionic/angular/standalone';
+import {IonButton,IonCard, IonText,IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar} from '@ionic/angular/standalone';
 import { Producto } from 'src/app/data/interfaces/producto.model';
 import { ServicioProducto } from 'src/app/data/services/servicio-producto';
 @Component({
   selector: 'app-lista-producto',
   templateUrl: './lista-producto.component.html',
   styleUrls: ['./lista-producto.component.scss'],
-  imports:[IonButton,CommonModule,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonThumbnail,IonAvatar]
+  imports:[IonButton,CommonModule,IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonItem,  IonLabel,  IonList,  IonText]
 })
 export class ListaProductoComponent  implements OnInit {
   producto: Producto;

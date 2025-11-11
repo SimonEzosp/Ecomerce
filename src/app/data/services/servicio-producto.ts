@@ -30,23 +30,21 @@ export class ServicioProducto {
         alert(`ADDED TO CART: ${producto.title} `);
         this.carrito.push(producto);
       }
-    
-  }
-  eliminarDelCarrito(producto: Producto) {
+    }
+    eliminarDelCarrito(producto: Producto) {
+      this.carrito = this.carrito.filter(p => p.id !== producto.id);
+      alert("DROP "+ producto.title )
+    }
+    obtenerCarrito(): Producto[] {
+      return this.carrito;
+    }
 
-    this.carrito = this.carrito.filter(p => p.id !== producto.id);
-    alert("DROP "+ producto.title )
-  }
-  obtenerCarrito(): Producto[] {
-    return this.carrito;
-  }
+    postAPI(post: Producto):Observable<Producto[]>{
+      alert("PRODUCT INSERT")
+      return this.http.post<Producto[]>(this.postURL,post)
+    }
 
-  postAPI(post: Producto):Observable<Producto[]>{
-    alert("PRODUCT INSERT")
-  return this.http.post<Producto[]>(this.postURL,post)
-}
-
-  getAPI():Observable<Producto[]>{
-    return this.http.get<Producto[]>(this.getURL)
-  }
+    getAPI():Observable<Producto[]>{
+      return this.http.get<Producto[]>(this.getURL)
+    }
 }

@@ -5,7 +5,9 @@
       <img [src]="objeto.image" alt="{{objeto.title}}">
     </ion-card>
     <ion-card-title class="card-title">{{objeto.title}}</ion-card-title>
-    <ion-card-subtitle class="card-price">COP {{objeto.price}}</ion-card-subtitle>
+    <ion-card-subtitle class="card-price">$: {{objeto.price}}</ion-card-subtitle>
+    <ion-text > <h6 class="card-content">Category: <br>{{objeto.category}}</h6></ion-text><br>
+    <ion-text ><h6 class="card-content">description: <br>{{objeto.description}}</h6></ion-text><br> 
     <ion-button class="btn-add"  (click)="ejecutarAccion(objeto)">{{ modo === 'tienda' || modo == 'crear' ? 'Add Cart' : 'Drop Cart' }}</ion-button>
   </ion-card>
 <ion-card>
