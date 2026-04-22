@@ -16,9 +16,8 @@ export class InfoUsuarioPage implements OnInit {
   sName: string="David";
   fLName: string="Rodriguez";
   sLName: string="Ospina";
-  birthDate: Date=new Date(2004,4,5);
   mail: string="simonrodriguezospina5870@gmail.com";
-  phone: number=3223415969;
+  phone: number= 1234567810;
   linkedin: string="https://www.linkedin.com/in/simon-david-rodriguez-ospina/";
 
   constructor() { 
